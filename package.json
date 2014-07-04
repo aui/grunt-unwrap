@@ -1,0 +1,21 @@
+{
+  "name": "grunt-unwrap",
+  "description": "the grunt plugin for unwrap",
+  "version": "0.0.1",
+  "homepage": "https://github.com/aui/grunt-unwrap",
+  "author": "aui",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aui/grunt-unwrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aui/grunt-unwrap/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  }
+}
