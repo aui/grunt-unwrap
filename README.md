@@ -14,7 +14,7 @@ npm install grunt-unwrap --save-dev
 
 *	类型：`String` | `Array`
 
-模版文件
+源文件。
 
 ##	dest
 
@@ -68,13 +68,13 @@ define(function () {
 
 *	类型：`String`
 
-导出的名称
+导出的名称。
 
 ###	options.banner
 
 *	类型：`String`
 
-导出的代码头部注释信息
+导出的代码头部注释信息。
 
 
 ##	示例
