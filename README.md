@@ -2,7 +2,7 @@
 
 这是一个简单的 CMD 模块解除器，可以将 CMD 格式书写的模块导出不依赖加载器的版本。
 
-[jquery](https://github.com/jquery/jquery/)的源码是按照 AMD 规范书写的模块，最终发布的时候通过它私有的`build`脚本来打包最终我们所用到的版本，遗憾的是这个`build`脚本只适用于 jquery 本身，并不能通用，于是才有了 grunt-unwrap 的诞生，你可以基于 CMD 规范书写模块，然后通过 grunt-unwrap 来组装发布版本。
+[jquery](https://github.com/jquery/jquery/)的源码是按照 AMD 规范书写的模块，这样的好处就是可以很方便自由组合需要的特性。jquery 最终发布的时候通过它私有的`build`脚本来打包最终我们所用到的版本。遗憾的是这个`build`脚本只适用于 jquery 项目本身，并不能通用，于是才有了 grunt-unwrap 这个通用解决方案的诞生，你可以基于 CMD 规范书写模块，然后通过 grunt-unwrap 来组装发布版本。
 
 ##	典型项目
 
@@ -119,8 +119,10 @@ module.exports = function (grunt) {
 
 ##	注意事项
 
-* 请不要给模块命名 ID，转换器会自动添加 ID
-* 模块内部的注释请不要包含`require`，否则可能会误分析
+1. 请不要给模块命名 ID，转换器会自动添加 ID
+2. 模块内部的注释请不要包含`require`，否则可能会误分析
+
+>	未来可能会借助词法分析的库来安全的解决第二个问题。
 
 ## License
 
