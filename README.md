@@ -6,7 +6,7 @@
 
 ##	典型项目
 
-[artDialog v6.0.2](https://github.com/aui/artDialog) 是 grunt-unwrap 的典型项目，artDialog-v6.0.0 曾只有 模块化的版本，后来用户强烈要求提供不依赖加载器的版本，于是最终通过 grunt-unwrap 来实现了这个需求，目前 artDialog 通过 grunt-unwrap 来编译其标准版与增强版，具体可见它的[Gruntfile.js](https://github.com/aui/artDialog/blob/master/Gruntfile.js)文件。
+[artDialog v6.0.2](https://github.com/aui/artDialog) 是 grunt-unwrap 的典型项目，artDialog-v6.0.0 曾只有模块化的版本，后来用户强烈要求提供不依赖加载器的版本，于是最终通过 grunt-unwrap 来实现了这个需求，目前 artDialog 通过 grunt-unwrap 来编译其标准版与增强版，具体可见它的[Gruntfile.js](https://github.com/aui/artDialog/blob/master/Gruntfile.js)文件。
 
 ##	安装
 
