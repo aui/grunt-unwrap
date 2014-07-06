@@ -1,10 +1,16 @@
 # grunt-unwrap
 
-一个简单的 CMD 模块解除器，可以将 CMD 格式书写的模块导出不依赖加载器的版本。
+这是一个简单的 CMD 模块解除器，可以将 CMD 格式书写的模块导出不依赖加载器的版本。
 
-典型项目：<https://github.com/aui/artDialog>
+[jquery](https://github.com/jquery/jquery/)的源码是按照 AMD 规范书写的模块，最终发布的时候通过它私有的`build`脚本来打包最终我们所用到的版本，遗憾的是这个`build`脚本只适用于 jquery 本身，并不能通用，于是才有了 grunt-unwrap 的诞生，你可以基于 CMD 规范书写模块，然后通过 grunt-unwrap 来组装发布版本。
+
+##	典型项目
+
+[artDialog v6.0.2](https://github.com/aui/artDialog) 是 grunt-unwrap 的典型项目，artDialog-v6.0.0 曾只有 模块化的版本，后来用户强烈要求提供不依赖加载器的版本，于是最终通过 grunt-unwrap 来实现了这个需求，目前 artDialog 通过 grunt-unwrap 来编译其标准版与增强版，具体可见它的[Gruntfile.js](https://github.com/aui/artDialog/blob/master/Gruntfile.js)文件。
 
 ##	安装
+
+首先安装[NodeJS](http://nodejs.org)与[GruntJS](http://gruntjs.com)，然后安装`grunt-unwrap`：
 
 ```shell
 npm install grunt-unwrap --save-dev
@@ -14,7 +20,7 @@ npm install grunt-unwrap --save-dev
 
 *	类型：`String` | `Array`
 
-源文件。
+需要打包的目标模块文件（内部依赖会提取并合并）。
 
 ##	dest
 
@@ -76,7 +82,6 @@ define(function () {
 
 导出的代码头部注释信息。
 
-
 ##	示例
 
 ```
@@ -110,11 +115,12 @@ module.exports = function (grunt) {
 
 ```
 
-完整项目演示请参考：<https://github.com/aui/artDialog>
+最终`dialog.js`与`dialog-plus.js`会在全局暴露`dialog`这个变量让开发者调用。
 
 ##	注意事项
 
-请不要给模块命名 ID，转换器会自动添加 ID。
+* 请不要给模块命名 ID，转换器会自动添加 ID
+* 模块内部的注释请不要包含`require`，否则可能会误分析
 
 ## License
 
