@@ -26,8 +26,8 @@ function replaceRequire (code, fn) {
 
 function toId (id) {
 	return id
+	.replace(/\\/g, '/')
 	.replace(/^\//, '')
-	.replace(/\\/g, '')
 	.replace(/\.js$/, '');
 }
 
